@@ -353,6 +353,36 @@ const Skills = () => (
           ))}
         </div>
       </BentoCard>
+      <BentoCard title="Web Development & LMS" icon={Globe}>
+  <div className="space-y-6">
+    {[
+      { name: "WordPress Development", level: 95 },
+      { name: "LearnDash LMS", level: 92 },
+      { name: "Web Applications", level: 88 },
+      { name: "Discipleship Platform Design", level: 90 },
+      { name: "React.js", level: 82 },
+      { name: "Frontend Development", level: 85 },
+      { name: "PHP", level: 87 },
+      { name: "Laravel", level: 80 }
+    ].map((skill) => (
+      <div key={skill.name} className="space-y-2">
+        <div className="flex justify-between text-sm">
+          <span className="text-white">{skill.name}</span>
+          <span className="text-blue-400 font-mono">{skill.level}%</span>
+        </div>
+        <div className="h-1.5 w-full bg-white/5 rounded-full overflow-hidden">
+          <motion.div 
+            initial={{ width: 0 }}
+            whileInView={{ width: `${skill.level}%` }}
+            className="h-full bg-blue-400"
+          />
+        </div>
+      </div>
+    ))}
+  </div>
+</BentoCard>
+
+      
 
       <BentoCard title="Technical Languages" icon={Code2} className="md:col-span-2">
         <div className="flex flex-wrap gap-4">
